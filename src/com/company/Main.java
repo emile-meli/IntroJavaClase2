@@ -23,6 +23,14 @@ public class Main {
         Libro libro = new Libro("Harry Potter", "J. K. Rowling", 12342324);
         System.out.println(libro.toString());
 
-
+        //Ejercicio 4
+        System.out.println("3/2 + 1/2 = " + Fraccion.suma(3,2,1,2));
+        System.out.println("1/2 + 1 = " + Fraccion.suma(1,2,1));
+        System.out.println("3/2 - 1/2 = " + Fraccion.resta(3,2,1,2));
+        System.out.println("1/2 - 1 = " + Fraccion.resta(1,2,1));
+        System.out.println("3/2 * 1/2 = " + Fraccion.multiplicacion(3,2,1,2));
+        System.out.println("1/2 * 1 = " + Fraccion.multiplicacion(1,2,1));
+        System.out.println("3/2 / 1/2 = " + Fraccion.dividir(3,2,1,2));
+        System.out.println("1/2 / 2 = " + Fraccion.dividir(1,2,2));
     }
 }
