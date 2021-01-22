@@ -19,5 +19,10 @@ public class Main {
 
         //Ejercicio 2
 
+        //Ejercicio 3
+        Libro libro = new Libro("Harry Potter", "J. K. Rowling", 12342324);
+        System.out.println(libro.toString());
+
+
     }
 }
