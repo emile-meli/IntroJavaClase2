@@ -5,31 +5,42 @@ import java.util.GregorianCalendar;
 
 public class Fecha {
 
-    GregorianCalendar calendar;
+    int dia;
+    int mes;
+    int anio;
 
     public Fecha(int dia, int mes, int anio) {
-        if(dia <= 0 || mes < 0 || anio <= 0){
-            throw new RuntimeException("Dia/Mes/Año no tiene un valor aceptable");
-        }else if(mes >= 12){
-            throw new RuntimeException("El mes no puede superar 11");
+        if(!checkDate(dia, mes, anio)){
+            throw new RuntimeException("Valores no validos.");
         }
-        GregorianCalendar aux = new GregorianCalendar(anio, mes, 1);
-        if(dia > aux.getActualMaximum(Calendar.DAY_OF_MONTH)){
-            throw new RuntimeException("Valor de dia demasiado grande.");
-        }
-        calendar = new GregorianCalendar(anio, mes, dia);
+        this.dia = dia;
+        this.mes = mes;
+        this.anio = anio;
     }
 
-    public GregorianCalendar getCalendar() {
-        return calendar;
+
+
+    public static boolean checkDate(int dia, int month, int year){
+        if(dia <= 0 || month <= 0 || year <= 0){
+            return false;
+        }else if(month > 12){
+            return false;
+        }
+        GregorianCalendar aux = new GregorianCalendar(year, month-1, 1);
+        return dia <= aux.getActualMaximum(Calendar.DAY_OF_MONTH);
     }
 
-    public void setCalendar(GregorianCalendar calendar) {
-        this.calendar = calendar;
+    public Fecha addDay(){
+        GregorianCalendar calendar = new GregorianCalendar(anio, mes - 1, dia);
+        calendar.add(Calendar.DAY_OF_MONTH, 1);
+        this.dia = calendar.get(Calendar.DAY_OF_MONTH);
+        this.mes = calendar.get(Calendar.MONTH) + 1;
+        this.anio = calendar.get(Calendar.YEAR);
+        return this;
     }
 
     @Override
     public String toString() {
-        return calendar.get(Calendar.DAY_OF_MONTH) + "/" + calendar.get(Calendar.MONTH) + "/" + calendar.get(Calendar.YEAR);
+        return dia + "/" + mes + "/" + anio;
     }
 }

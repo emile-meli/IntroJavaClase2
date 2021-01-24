@@ -37,7 +37,10 @@ public class Main {
 
         //Ejercicio 5 TM
 
-        Fecha fecha1 = new Fecha(29,5,2021);
+        Fecha fecha1 = new Fecha(31,5,2021);
         System.out.println(fecha1);
+        System.out.println("Agregando un dia a es fecha se obtiene: " + fecha1.addDay());
+        System.out.println("31/2/2020 " + (Fecha.checkDate(31,1,2020)?"Fecha válida":"Fecha no válida"));
+
     }
 }
