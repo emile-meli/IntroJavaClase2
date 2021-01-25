@@ -42,5 +42,16 @@ public class Main {
         System.out.println("Agregando un dia a es fecha se obtiene: " + fecha1.addDay());
         System.out.println("31/2/2020 " + (Fecha.checkDate(31,1,2020)?"Fecha válida":"Fecha no válida"));
 
+        //Ejercicio 1 TT
+
+        Password password = new Password("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$%&@!#?*+])[a-zA-Z\\d$%&@!#?*+]{8,}$");
+        password.setPwd("Testing1!");
+        StrongPassword strongPassword = new StrongPassword();
+        strongPassword.setPwd("Testin1!");
+        IntermediatePassword intermediatePassword = new IntermediatePassword();
+        intermediatePassword.setPwd("Testingg");
+        SimplePassword simplePassword = new SimplePassword();
+        simplePassword.setPwd("testingg");
+
     }
 }
