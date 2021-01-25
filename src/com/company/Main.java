@@ -1,6 +1,8 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 public class Main {
 
@@ -52,6 +54,16 @@ public class Main {
         intermediatePassword.setPwd("Testingg");
         SimplePassword simplePassword = new SimplePassword();
         simplePassword.setPwd("testingg");
+
+        //Ejercicio 2 TT
+        List<FiguraGeometrica> figuras= new ArrayList<>();
+        figuras.add(new Circulo(1));
+        figuras.add(new Rectangulo(2,1));
+        figuras.add(new Triangulo(2,1));
+        System.out.println("El circulo tiene un area de: " + figuras.get(0).area());
+        System.out.println("El rectangulo tiene un area de: " + figuras.get(1).area());
+        System.out.println("El triangulo tiene un area de: " + figuras.get(2).area());
+        System.out.println("El promedio de areas es: " + AreaUtil.areaPromedio(figuras));
 
     }
 }
